@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: ML-Project
+Version: 0.0.0
+Author: yash gosavi
+Author-email: yashcgosavi@gmail.com
+Requires: pandas
+Requires: numpy
+Requires: matplotlib
+Requires: seaborn
