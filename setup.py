@@ -1,23 +1,19 @@
-from setuptools import find_packages, setup
-from typing import List
-
+from setuptools import setup, find_packages
 HYPHEN_E_DOT = "-e ."
 
-def find_requirements(file_path: str) -> List[str]:
+def get_requirements(file_path: str)-> list[str]:
     with open(file_path) as f:
         requirements = f.readlines()
-        requirements = [x.replace("\n", "") for x in requirements]
-        
+    requirements = [x.replace("\n", "") for x in requirements]
     if HYPHEN_E_DOT in requirements:
         requirements.remove(HYPHEN_E_DOT)
     return requirements
 
-# print(find_requirements("requirements.txt"))
-
 setup(
-    name="ML Project",
-    author="yash gosavi",
+    name="My Project",
+    author="yash",
     author_email="yashcgosavi@gmail.com",
-    requires=find_requirements("./requirements.txt"),
-    packages=find_packages()
+    packages=find_packages(),
+    version="0.0.1",
+    requires=get_requirements("requirements.txt")
 )
